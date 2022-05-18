@@ -5,7 +5,7 @@ namespace PMS_API
     public interface IPersonalService
     {
         bool AddPersonalDetail(PersonalDetails personalDetails);
-        IEnumerable<PersonalDetails> GetPersonalDetails();
+        IEnumerable<PersonalDetails> GetallPersonalDetails();
         object GetPersonalDetailsById(int id);
         bool UpdatePersonalDetail(PersonalDetails personalDetails);
         bool DisablePersonalDetails(int PersonalDetailsid);
@@ -41,15 +41,19 @@ namespace PMS_API
 
         bool AddSocialMedia(SocialMedia media);
         bool DisableSocialMedia(int SocialMediaid);
-        public object GetPersonalDetailsByPersonalDetailId(int PersonalDetailid);
-        public IEnumerable<Object> GetAllEducationDetailsByPersonalDetailsId(int PersonalDetailid);
-        public IEnumerable<Object> GetAllProjectDetailsByPersonalDetailsId(int PersonalDetailid);
-        public IEnumerable<Object> GetAllSkillDetailsByPersonalDetailsId(int PersonalDetailid);
+        
+        
         object GetTechnologyById(int Technologyid);
         IEnumerable<Technology> GetallTechnologies();
+        
+        object GetPersonalDetailsByProfileId(int Profileid);
+        IEnumerable<Object> GetEducationDetailsByProfileId(int Profileid);
+        IEnumerable<Object> GetProjectDetailsByProfileId(int Profileid);
+        IEnumerable<Object> GetSkillDetailsByProfileId(int Profileid);
+        IEnumerable<Object> GetAchievementDetailsByProfileId(int Profileid);        
 
         object GetProfileById(int Profileid);
-        public IEnumerable<Profile> GetallProfiles();
+        IEnumerable<Profile> GetallProfiles();
 
         // public IEnumerable<Object> ShareProfile(string mailaddress,int Personalid);
          
@@ -90,7 +94,7 @@ namespace PMS_API
             }
 
         }
-        public IEnumerable<PersonalDetails> GetPersonalDetails()
+        public IEnumerable<PersonalDetails> GetallPersonalDetails()
         {
             try{
                 // IEnumerable<User> userDetails = new List<User>();
@@ -129,7 +133,7 @@ namespace PMS_API
                 throw exception;
             }
         }
-        public object GetPersonalDetailsByPersonalDetailId(int Profileid)
+        public object GetPersonalDetailsByProfileId(int Profileid)
         {
             if(Profileid<=0)
                 throw new ArgumentNullException($"ID is not provided{Profileid}");
@@ -247,7 +251,7 @@ namespace PMS_API
                 throw exception;
             }
         }
-        public IEnumerable<Object> GetAllEducationDetailsByPersonalDetailsId(int Profileid)        {
+        public IEnumerable<Object> GetEducationDetailsByProfileId(int Profileid)        {
             if(Profileid<=0)
                 throw new ArgumentNullException($"ID is not provided{Profileid}");
             try
@@ -370,7 +374,7 @@ namespace PMS_API
                 throw exception;
             }
         }
-        public IEnumerable<Object> GetAllProjectDetailsByPersonalDetailsId(int Profileid)
+        public IEnumerable<Object> GetProjectDetailsByProfileId(int Profileid)
         {
             if(Profileid<=0)
                 throw new ArgumentNullException($"ID is not provided{Profileid}");
@@ -489,7 +493,7 @@ namespace PMS_API
                 throw exception;
             }
         }
-        public IEnumerable<Object> GetAllSkillDetailsByPersonalDetailsId(int Profileid)
+        public IEnumerable<Object> GetSkillDetailsByProfileId(int Profileid)
         {
             if(Profileid<=0)
                 throw new ArgumentNullException($"ID is not provided{Profileid}");
@@ -733,7 +737,7 @@ namespace PMS_API
                 throw exception;
             }
         }
-         public IEnumerable<Object> GetAllAchievementsByPersonalDetailsId(int Profileid)
+         public IEnumerable<Object> GetAchievementsByProfileId(int Profileid)
         {
             if(Profileid<=0)
                 throw new ArgumentNullException($"ID is not provided{Profileid}");
