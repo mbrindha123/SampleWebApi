@@ -798,11 +798,11 @@ namespace PMS_API
             {
                 var getviewdetails= profileData.GetProfileById(Profileid); 
                 return new {
-                    personaldetails=GetPersonalDetailsByPersonalDetailId(getviewdetails.ProfileId),
-                    educationdetails=GetAllEducationDetailsByPersonalDetailsId(getviewdetails.ProfileId),
-                    projectdetails=GetAllProjectDetailsByPersonalDetailsId(getviewdetails.ProfileId),
-                    skilldetails=GetAllSkillDetailsByPersonalDetailsId(getviewdetails.ProfileId),
-                    achievementdetails=GetAllAchievementsByPersonalDetailsId(getviewdetails.ProfileId)
+                    personaldetails=GetPersonalDetailsByProfielId(getviewdetails.ProfileId),
+                    educationdetails=GetEducationDetailsByProfileId(getviewdetails.ProfileId),
+                    projectdetails=GetProjectDetailsByProfileId(getviewdetails.ProfileId),
+                    skilldetails=GetSkillDetailsByProfileId(getviewdetails.ProfileId),
+                    achievementdetails=GetAchievementsByProfileId(getviewdetails.ProfileId)
                 };
             }
             catch(Exception exception){
