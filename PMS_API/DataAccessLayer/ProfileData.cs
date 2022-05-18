@@ -19,7 +19,7 @@ namespace PMS_API
             _context = context;
             _logger = logger;
         }
-        public List<PersonalDetails> GetPersonalDetails()
+        public List<PersonalDetails> GetallPersonalDetails()
         {
 
             try
@@ -45,7 +45,7 @@ namespace PMS_API
 
             try
             {
-                PersonalDetails personalDetails = GetPersonalDetails().Where(x => x.PersonalDetailsId == id).First();
+                PersonalDetails personalDetails = GetallPersonalDetails().Where(x => x.PersonalDetailsId == id).First();
                 if (personalDetails == null) throw new NullReferenceException($"Id not found-{id}");
                 return personalDetails;
             }
