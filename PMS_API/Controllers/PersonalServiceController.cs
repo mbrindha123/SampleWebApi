@@ -38,7 +38,7 @@ namespace PMS_API
             try
             {
 
-                return Ok(_personalService.GetPersonalDetails());
+                return Ok(_personalService.GetallPersonalDetails());
             }
             catch (Exception exception)
             {
